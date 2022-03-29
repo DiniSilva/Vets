@@ -1,4 +1,6 @@
-﻿namespace Vets.Models{
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Vets.Models{
     public class Donos
     {
         public Donos(){
@@ -13,16 +15,19 @@
         /// <summary>
         /// Nome o Dono do animal
         /// </summary>
+        [Required(ErrorMessage="Prenchimento Obrigatório")]
         public string Nome { get; set; }
 
         /// <summary>
         /// Número do NIF
         /// </summary>
+        [Required(ErrorMessage = "Prenchimento Obrigatório")]
         public string NIF { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [Required(ErrorMessage = "Prenchimento Obrigatório")]
         public string Sexo { get; set; }
 
         /// <summary>
