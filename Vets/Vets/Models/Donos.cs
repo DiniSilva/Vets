@@ -16,18 +16,24 @@ namespace Vets.Models{
         /// Nome o Dono do animal
         /// </summary>
         [Required(ErrorMessage="Prenchimento Obrigatório")]
+        [StringLength(20, ErrorMessage ="O {@} não pode ter mais do que 20 caracteres.")]
+        [RegularExpression("[A-ZÂÓ-azáéíóúàèìòùâêîôûãõäëïöüÿñç]+" ,ErrorMessage ="No {@} são só aceites letras")]
         public string Nome { get; set; }
 
         /// <summary>
-        /// Número do NIF
+        /// Número do NIF do dono do animal
         /// </summary>
         [Required(ErrorMessage = "Prenchimento Obrigatório")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "O {@} tem de ter {l} caracteres.")]
+        [RegularExpression("[123578] + [0-9]{9}", ErrorMessage = "")]
         public string NIF { get; set; }
 
         /// <summary>
-        /// 
+        /// Sexo do dono
+        /// Ff - feminino e Mm - masculino
         /// </summary>
         [Required(ErrorMessage = "Prenchimento Obrigatório")]
+        [RegularExpression("[FfMm]", ErrorMessage = "No {@} só se aceitam as letras F ou M.")]
         public string Sexo { get; set; }
 
         /// <summary>
