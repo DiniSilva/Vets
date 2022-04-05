@@ -35,9 +35,15 @@ namespace Vets.Models{
         [Required(ErrorMessage = "Prenchimento Obrigatório")]
         [RegularExpression("[FfMm]", ErrorMessage = "No {@} só se aceitam as letras F ou M.")]
         public string Sexo { get; set; }
+        
+        /// <summary>
+        /// Email
+        /// </summary>
+        [EmailAddress(ErrorMessage ="Introduza o email correto")]
+        public string Email { get; set; }
 
         /// <summary>
-        /// 
+        /// Lista dos animais de quem o Dono é dono
         /// </summary>
         public ICollection<Animais> ListaAnimais { get; set; }
     }
