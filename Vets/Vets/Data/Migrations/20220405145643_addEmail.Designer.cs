@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vets.Data;
 
@@ -11,9 +12,10 @@ using Vets.Data;
 namespace Vets.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220405145643_addEmail")]
+    partial class addEmail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -342,29 +344,6 @@ namespace Vets.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Veterinarios");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Fotografia = "Jose.jpg",
-                            Nome = "José Silva",
-                            NumCedulaProf = "vet-8765"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Fotografia = "Maria.jpg",
-                            Nome = "Maria Gomes dos Santos",
-                            NumCedulaProf = "vet-6542"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Fotografia = "Ricardo.jpg",
-                            Nome = "Ricardo Sousa",
-                            NumCedulaProf = "vet-1339"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
